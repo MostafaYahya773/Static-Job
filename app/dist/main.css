@@ -1,0 +1,196 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: hsl(180, 52%, 96%);
+  font-family: "League Spartan", serif;
+  overflow-x: hidden;
+}
+
+.main header {
+  background: url(../images/bg-header-desktop.svg) no-repeat center center/cover;
+  width: 100vw;
+  height: 150px;
+  background-color: hsl(180, 29%, 50%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.main header input {
+  position: absolute;
+  z-index: 10;
+  bottom: -20px;
+  width: 70%;
+  height: 50px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px hsl(180, 29%, 50%);
+  border-radius: 5px;
+  padding: 0px 10px;
+  font-size: 18px;
+}
+@media (max-width: 600px) {
+  .main header input {
+    width: 90%;
+    height: 40px;
+  }
+}
+.main__boxes {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px 0px;
+}
+.main__boxes--box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 67%;
+  min-height: 100px;
+  background-color: hsl(0, 100%, 100%);
+  box-shadow: 1px 1px 9px -4px hsl(180, 29%, 50%);
+  border-radius: 5px;
+  padding: 20px;
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .main__boxes--box {
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .main__boxes--box {
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, auto);
+    margin-bottom: 40px;
+    width: 80%;
+  }
+}
+.main__boxes--box--details {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0px 20px;
+}
+@media (max-width: 600px) {
+  .main__boxes--box--details {
+    border-bottom: 2px solid gray;
+    flex-direction: column;
+    align-items: start;
+  }
+}
+@media (max-width: 600px) {
+  .main__boxes--box--details img {
+    position: absolute;
+    top: -50px;
+    width: 70px;
+  }
+}
+.main__boxes--box--details--info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0px;
+}
+@media (max-width: 600px) {
+  .main__boxes--box--details--info {
+    margin-top: 40px;
+  }
+}
+.main__boxes--box--details--info .title {
+  margin: 0;
+  padding: 0px 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.main__boxes--box--details--info--name {
+  display: flex;
+  gap: 0px 5px;
+}
+.main__boxes--box--details--info--name .name,
+.main__boxes--box--details--info--name .new,
+.main__boxes--box--details--info--name .featured {
+  margin: 0;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+.main__boxes--box--details--info--name .name {
+  color: hsl(180, 29%, 50%);
+}
+.main__boxes--box--details--info--name .new {
+  color: hsl(0, 100%, 100%);
+  background-color: hsl(180, 29%, 50%);
+}
+.main__boxes--box--details--info--name .featured {
+  color: hsl(0, 100%, 100%);
+  background-color: hsl(180, 14%, 20%);
+}
+.main__boxes--box--details--info--date {
+  display: flex;
+  padding: 0 10px;
+  gap: 0px 35px;
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .main__boxes--box--details--info--date {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .main__boxes--box--details--info--date {
+    margin-bottom: 20px;
+  }
+}
+.main__boxes--box--details--info--date span {
+  font-size: 15px;
+  color: gray;
+  font-weight: 500;
+  position: relative;
+}
+.main__boxes--box--details--info--date span::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: gray;
+  top: 5px;
+  left: -20px;
+}
+.main__boxes--box--details--info--date span:nth-child(1)::before {
+  display: none;
+}
+.main__boxes--box--skills {
+  display: flex;
+  gap: 0px 20px;
+  align-items: center;
+  justify-content: end;
+  flex-wrap: wrap;
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .main__boxes--box--skills {
+    justify-content: start;
+  }
+}
+@media (max-width: 600px) {
+  .main__boxes--box--skills {
+    justify-content: start;
+  }
+}
+.main__boxes--box--skills p {
+  color: hsl(180, 29%, 50%);
+  background-color: hsl(180, 31%, 95%);
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.main__boxes--box--skills p:hover {
+  background-color: hsl(180, 29%, 50%);
+  color: hsl(0, 100%, 100%);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.main__boxes .border-left {
+  border-left: 5px solid hsl(180, 29%, 50%);
+}/*# sourceMappingURL=main.css.map */

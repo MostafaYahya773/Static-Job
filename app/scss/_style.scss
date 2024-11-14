@@ -1,0 +1,181 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $background-color;
+  font-family: 'League Spartan', serif;
+  overflow-x: hidden;
+}
+
+.main {
+  header {
+    background: url(../images/bg-header-desktop.svg) no-repeat center center/
+      cover;
+    width: 100vw;
+    height: 150px;
+    background-color: $primary-color;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    input {
+      position: absolute;
+      z-index: 10;
+      bottom: -20px;
+      width: 70%;
+      height: 50px;
+      border: none;
+      outline: none;
+      box-shadow: 0 0 10px $primary-color;
+      border-radius: 5px;
+      padding: 0px 10px;
+      font-size: 18px;
+      @include small-screen {
+        width: 90%;
+        height: 40px;
+      }
+    }
+  }
+  &__boxes {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px 0px;
+    &--box {
+      @include large-screen-down {
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, 1fr);
+      }
+      @include small-screen {
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, auto);
+        margin-bottom: 40px;
+        width: 80%;
+      }
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 67%;
+      min-height: 100px;
+      background-color: $box-color;
+      box-shadow: 1px 1px 9px -4px $primary-color;
+      border-radius: 5px;
+      padding: 20px;
+      &--details {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0px 20px;
+        @include small-screen {
+          border-bottom: 2px solid gray;
+          flex-direction: column;
+          align-items: start;
+        }
+        img {
+          @include small-screen {
+            position: absolute;
+            top: -50px;
+            width: 70px;
+          }
+        }
+        &--info {
+          @include small-screen {
+            margin-top: 40px;
+          }
+          display: flex;
+          flex-direction: column;
+          gap: 10px 0px;
+          .title {
+            margin: 0;
+            padding: 0px 10px;
+            font-weight: bold;
+            font-size: 18px;
+          }
+          &--name {
+            display: flex;
+            gap: 0px 5px;
+            .name,
+            .new,
+            .featured {
+              margin: 0;
+              font-weight: bold;
+              padding: 5px 10px;
+              border-radius: 20px;
+            }
+            .name {
+              color: $primary-color;
+            }
+            .new {
+              color: $box-color;
+              background-color: $primary-color;
+            }
+            .featured {
+              color: $box-color;
+              background-color: $future-color;
+            }
+          }
+          &--date {
+            @include large-screen-down {
+              margin-bottom: 20px;
+            }
+            @include small-screen {
+              margin-bottom: 20px;
+            }
+            display: flex;
+            padding: 0 10px;
+            gap: 0px 35px;
+            span {
+              font-size: 15px;
+              color: gray;
+              font-weight: 500;
+              position: relative;
+              &::before {
+                content: '';
+                position: absolute;
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background-color: gray;
+                top: 5px;
+                left: -20px;
+              }
+              &:nth-child(1)::before {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      &--skills {
+        display: flex;
+        gap: 0px 20px;
+        align-items: center;
+        justify-content: end;
+        flex-wrap: wrap;
+        @include large-screen-down {
+          justify-content: start;
+        }
+        @include small-screen {
+          justify-content: start;
+        }
+        p {
+          color: $primary-color;
+          background-color: $skill-background;
+          padding: 5px 10px;
+          font-size: 14px;
+          font-weight: bold;
+          border-radius: 5px;
+          &:hover {
+            background-color: $primary-color;
+            color: $box-color;
+            cursor: pointer;
+            transition: all 0.5s;
+          }
+        }
+      }
+    }
+    .border-left {
+      border-left: 5px solid $primary-color;
+    }
+  }
+}
